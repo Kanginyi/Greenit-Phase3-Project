@@ -1,0 +1,42 @@
+main {
+  width: 100vw;
+  max-width: 620px;
+  margin: 5rem auto;
+  
+  
+}
+
+.single-post{
+    margin: 3rem 0;
+    background-color: rgb(246 246 246);
+
+}
+
+.single-post img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.post-info {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 1.5rem;
+}
+
+.post-info h3 {
+margin-bottom: 0;
+}
+
+.single-post content{
+    padding: 1.5rem 2rem;
+}
+
+.single-post p{
+    padding: 16px;
+}
+
+.user-info{
+    margin-bottom: 10px;
+}
