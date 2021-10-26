@@ -1,6 +1,9 @@
 import {useState} from "react"
 import Posts from './Components/Main/Posts'
 import postData from './data'
+import NavBar from './Components/Header/NavBar'
+import Footer from "./Components/Footer/Footer"
+
 
 function App() {
   const [data, setData] = useState(postData);
@@ -13,13 +16,17 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div>
       {/* {data.message} */}
-      <header />
+      <header>
+        <NavBar /> 
+      </header>
       <main> 
         <Posts data={data}/>
       </main>
-      <footer />
+      <footer> 
+        <Footer />
+      </footer>
     </div>
   );
 }

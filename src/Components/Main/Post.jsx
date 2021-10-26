@@ -13,12 +13,11 @@ const Post = ({post}) => {
                 <h3>{post.title}</h3>
             </div>
             <img src={post.image} alt={post.title}/> 
-            <content>
-                
+            <div>        
                 <p>
                     {post.description}
                 </p>
-            </content>
+            </div>
         </article>
     )
 }
