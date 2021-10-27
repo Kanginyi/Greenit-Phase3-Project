@@ -6,7 +6,7 @@ const SearchBar = () => {
         <form className="searchbar">     
         <input
             type="text"
-            placeholder="search forum"
+            placeholder="Search Greenit"
         />
         {/* <button type="submit">Search</button> */}
     </form>

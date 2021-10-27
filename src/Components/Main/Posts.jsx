@@ -7,7 +7,11 @@ const Posts = ({data}) => {
     useEffect(() => {
         fetch("http://localhost:9292/users")
             .then(resp => resp.json())
-            .then(data => setUserData(data))
+            .then(data => {
+                if (data.length > 0 ) {
+                    setUserData(data)
+                }
+            })
     }, [])
 
 
