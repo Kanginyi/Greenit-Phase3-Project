@@ -5,9 +5,8 @@ const Post = ({post, userData}) => {
 
     const date = post.created_at.slice(0, 10);
     let slash = date.replaceAll("-", "/");
-    let partOne = slash.slice(0, 4);
-    let partTwo = slash.slice(5);
-    let dateFormat = partTwo + "/" + partOne;
+    let dateFormat = slash.slice(5) + "/" + slash.slice(0, 4);
+
 
 
     return (
