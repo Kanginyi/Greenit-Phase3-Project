@@ -9,7 +9,7 @@ const NavBar = () => {
         <>
             <div className='nav'>
                 <span className='logo-box'>
-                    <img src={logo} alt="Greenit Logo" title="Greenit >:^(" width="50px" height="50px"/>
+                    <img id="greenit-logo" src={logo} alt="Greenit Logo" title="Greenit >:^("/> 
                     <h4>Greenit</h4>
                 </span>     
                 <SearchBar />  

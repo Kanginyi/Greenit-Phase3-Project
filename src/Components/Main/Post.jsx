@@ -1,22 +1,28 @@
 import React from 'react'
 
-const Post = ({post}) => {
+const Post = ({post, userData}) => {
+    const userObj = userData.filter(user => user.id === post.user_id);
 
+    const date = post.created_at.slice(0, 10);
+    let slash = date.replaceAll("-", "/");
+    let partOne = slash.slice(0, 4);
+    let partTwo = slash.slice(5);
+    let dateFormat = partTwo + "/" + partOne;
 
 
     return (
         <div className='post-div'>
             <article className='single-post'>
                 <div className='user-info'>
-                    <h5>Posted by u/{post.author} at   {post.published_at}</h5>
+                    <h5>Posted by u/{userObj[0].username} on {dateFormat}!</h5>
                 </div>
                 <div className='post-info'>
                     <h3>{post.title}</h3>
                 </div>
-                <img src={post.image} alt={post.title}/> 
+                {post.image_url ? <img src={post.image_url} alt={post.title}/> : null }
                 <div>        
                     <p>
-                        {post.description}
+                        {post.content_post}
                     </p>
                 </div>
             </article>
