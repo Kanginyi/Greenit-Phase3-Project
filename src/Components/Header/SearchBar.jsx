@@ -6,9 +6,9 @@ const SearchBar = () => {
         <form className="searchbar">     
         <input
             type="text"
-            placeholder="search posts"
+            placeholder="search forum"
         />
-        <button type="submit">Search</button>
+        {/* <button type="submit">Search</button> */}
     </form>
     )
 }

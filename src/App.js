@@ -3,6 +3,7 @@ import Posts from './Components/Main/Posts'
 import postData from './data'
 import NavBar from './Components/Header/NavBar'
 import Footer from "./Components/Footer/Footer"
+import CategoryBar from "./Components/Main/CategoryBar"
 
 
 function App() {
@@ -18,10 +19,11 @@ function App() {
   return (
     <div>
       {/* {data.message} */}
-      <header>
+      <header className='sticky'>
         <NavBar /> 
       </header>
       <main> 
+        <CategoryBar />
         <Posts data={data}/>
       </main>
       <footer> 

@@ -5,7 +5,7 @@ import User from './User'
 const NavBar = () => {
     return (
         <>
-            <div className='nav sticky'>
+            <div className='nav'>
                 <span className='logo-box'>
                     <h4>Greenit</h4>
                 </span>     
