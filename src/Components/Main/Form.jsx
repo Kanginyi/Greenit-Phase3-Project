@@ -1,6 +1,27 @@
 import React from 'react'
+import { useState } from 'react'
 
-const Form = ({setShowForum}) => {
+const Form = ({setShowForum, handleAddPost}) => {
+
+    const [postForm, setPostForm] = useState({
+        username: "",
+        title: "",
+        content_post: "",
+        image_url: "",
+    })
+
+    const handleInputChange = (e) => {
+        setPostForm({
+            ...postForm,
+            [e.target.name]:e.target.value
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        handleAddPost(postForm)
+    }
+
     return (
         <>
             <div className='modal-background'>
@@ -8,21 +29,31 @@ const Form = ({setShowForum}) => {
                         <div className='x-btn-container'>
                             <button className='x-btn' onClick={() => setShowForum(false)}>X</button>
                         </div>
-                        <form className='form-modal'>
-                            
-                            <label for="username">Name</label>
-                            <input type="text" id='username'></input>
+                        <form className='form-modal' onSubmit={handleSubmit}>                  
+                            <h4>Name</h4>
+                            <input onChange={handleInputChange} type="text"
+                            name = "username"
+                            value = {postForm.username}
+                            />
                         
-                            <label for="title">Post Title</label>
-                            <input type="text" id='title'></input>
+                            <h4>Title</h4>
+                            <input onChange={handleInputChange} type="text" 
+                            name = "title"
+                            value = {postForm.title}
+                            />
                             
-                            <label for="content">Post Content</label>
-                            <textarea type="text" id='content' name="content" rows="4" cols="50"></textarea>
+                            <h4>Content</h4>
+                            <textarea  onChange={handleInputChange}  type="text" name="content_post" rows="4" cols="50"
+                            value = {postForm.content_post}
+                            />
                         
-                            <label for="image">Image </label>
-                            <input type="text" id='image'></input>
+                            <h4>Image</h4>
+                            <input onChange={handleInputChange}  
+                            type="text"
+                            name="image_url"
+                            value={postForm.image_url} />
 
-                            <input type="submit" id='submit-btn' />
+                            <button id='submit-btn'>Submit</button>
                         </form>
                     </div>            
             </div>

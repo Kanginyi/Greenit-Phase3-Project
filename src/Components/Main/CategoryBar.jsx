@@ -3,7 +3,7 @@ import Form from './Form'
 
 import { Link } from 'react-router-dom'
 
-const CategoryBar = () => {
+const CategoryBar = ({handleAddPost}) => {
     const [showForum, setShowForum] = useState(null)
 
 
@@ -20,7 +20,7 @@ const CategoryBar = () => {
            
         </div>
         <div>
-            {showForum ? <Form setShowForum={setShowForum}/> : false}
+            {showForum ? <Form setShowForum={setShowForum} handleAddPost={handleAddPost}/> : false}
         </div>
         </>
     )

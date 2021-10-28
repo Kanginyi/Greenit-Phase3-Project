@@ -22,6 +22,23 @@ function App() {
     setSearchValue(e.target.value);
   }
 
+  //FORM SUBMITS
+  const handleAddPost = post => {
+    fetch(`http://localhost:9292/forum_posts`, {
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'application/json',
+      },
+      body: JSON.stringify(post)
+    })
+    .then(res => res.json())
+    .then(post => {
+      setPostData([
+       post, ...postData
+      ])
+    })
+  }
+
   return (
     <Router>
       <div>
@@ -29,7 +46,7 @@ function App() {
           <NavBar search={search}/> 
         </header>
         <main> 
-          <CategoryBar />
+          <CategoryBar handleAddPost={ handleAddPost}/>
             <Switch>
               <Route path="/users">
                 <Users />
