@@ -154,7 +154,7 @@ main {
 
 .single-post img {
     width: 100%;
-    height: 20rem;
+    /* height: 20rem; */
     object-fit: cover;
 }
 
@@ -184,6 +184,10 @@ main {
 .forum-post-title {
     font-family: 'Noto Serif Display', serif;
     font-size: 2em;
+}
+
+.username-color {
+    color:rgb(7, 172, 78)
 }
 
 .user-div {
