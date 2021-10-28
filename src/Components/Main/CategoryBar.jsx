@@ -1,16 +1,11 @@
 import { useState } from 'react'
 import Form from './Form'
 
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const CategoryBar = () => {
     const [showForum, setShowForum] = useState(null)
 
-    const usersLink = () => {
-        <Route path="/users">
-
-        </Route>
-    }
 
     return (
         <>
