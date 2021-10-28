@@ -186,6 +186,16 @@ main {
     font-size: 2em;
 }
 
+.user-div {
+    padding: 10px;
+    margin: 3rem 0;
+    background-color: white;
+}
+
+.user-div:hover {
+    box-shadow: 1px 1px 5px 3px rgba(14, 129, 64, 0.4);
+}
+
 
 /* -----------------------Category STUFF */
 
