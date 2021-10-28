@@ -15,29 +15,14 @@ const Posts = ({data, search, searchValue}) => {
     }, [])
 
 
-    const postData = data.map(post => <Post post={post} key={post.id} userData={userData}/>)
+    const postData = data.map(post => <Post post={post} key={post.id} userData={userData}/>);
 
-    // console.log(postData[0]);
-    // console.log(postData[0].props);
-    // console.log(postData[0].props.post);
-    // console.log(postData[0].props.post.title);
-    // console.log(searchValue);
-
-    // const asdf = searchValue === "" ? postData : postData.filter(forum => forum.props.post.title.toLowerCase() === searchValue.toLowerCase());
-
-    // const filterPosts = postData.filter(forum => {
-    //     console.log(forum.props);
-
-    //     forum.props === searchValue
-    // });
+    const filterData = searchValue === "" ? postData : postData.filter(forum => forum.props.post.title.toLowerCase().includes(searchValue.toLowerCase()));
     
 
-    // console.log(filterPosts);
-    
     return (
         <div>
-            {postData}  
-            {/* {asdf} */}
+            {filterData}
         </div>
     )
 }
