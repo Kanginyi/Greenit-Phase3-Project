@@ -39,5 +39,4 @@ function User ({username, id}) {
         </div>
     );
 }
-
 export default User;

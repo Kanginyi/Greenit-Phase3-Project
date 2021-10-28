@@ -10,9 +10,9 @@ const CategoryBar = ({handleAddPost}) => {
     return (
         <>
         <div className='category-bar'>
-            <Link>Hot</Link>
-            <Link>Everywhere</Link>          
-            <Link>New</Link>
+            <button>Hot</button>
+            <button>Everywhere</button>          
+            <button>New</button>
             <Link to="/users">Users</Link>
             <showforum className='show-forum'> 
                 <button onClick={() => setShowForum(true)}>Make Post</button>
