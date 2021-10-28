@@ -200,14 +200,28 @@ main {
     box-shadow: 1px 1px 5px 3px rgba(14, 129, 64, 0.4);
 }
 
-#upvotes-button:hover {
+.upvotes-button, .downvotes-button {
+    border-radius: 20px;
+    width: 150px;
+}
+
+
+.upvotes-button:hover {
     background-color:rgb(7, 172, 78)
 }
 
-#downvotes-button:hover {
+.downvotes-button:hover {
     background-color:rgb(252, 57, 57)
 }
 
+.comment-btn {
+    border-radius: 20px;
+    width: 150px;
+}
+
+.delete-X {
+    border: 1px solid black;
+}
 
 /* -----------------------Category STUFF */
 

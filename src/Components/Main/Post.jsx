@@ -13,7 +13,7 @@ const Post = ({post, userData}) => {
         <div className='post-div'>
             <article className='single-post'>
                 <div className='user-info'>
-                    <h5>Posted by <span className="username-color">u/{userObj[0]?.username}</span> on {dateFormat}</h5>
+                    <h5>Posted by <span className="username-color">u/{userObj[0]?.username}</span> on {dateFormat}<span className="delete-X">X</span></h5>
                 </div>
                 <div className='post-info'>
                     <h3 className="forum-post-title">{post.title}</h3>
@@ -26,8 +26,7 @@ const Post = ({post, userData}) => {
                 </div>
             </article>
             <div>
-                <button id="upvotes-button">👍 {post.upvotes} Upvotes</button>
-                <button id="downvotes-button">👎 {post.downvotes} Downvotes</button>
+                <button className="upvotes-button">👍 {post.upvotes} Upvotes</button> <button className="downvotes-button">👎 {post.downvotes} Downvotes</button>
             </div>
             <br />
             <div className='post-btn-section'>
