@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Post = ({post, userData}) => {
+const Post = ({post, userData, handleDelete}) => {
     const userObj = userData.filter(user => user.id === post.user_id);
 
     const date = post.created_at.slice(0, 10);
@@ -13,7 +13,7 @@ const Post = ({post, userData}) => {
         <div className='post-div'>
             <article className='single-post'>
                 <div className='user-info'>
-                    <h5>Posted by <span className="username-color">u/{userObj[0]?.username}</span> on {dateFormat}</h5><button className="delete-X" onClick={() => console.log("wtf")}>X</button>
+                    <h5>Posted by <span className="username-color">u/{userObj[0]?.username}</span> on {dateFormat}</h5><button className="delete-X" onClick={() => handleDelete(post.id)}>X</button>
                 </div>
                 <div className='post-info'>
                     <h3 className="forum-post-title">{post.title}</h3>

@@ -1,7 +1,7 @@
 import Post from "./Post"
 import React, {useState, useEffect} from "react";
 
-const Posts = ({data, search, searchValue}) => {
+const Posts = ({data, search, searchValue, handleDelete}) => {
     const [userData, setUserData] = useState([]);
     
     useEffect(() => {
@@ -15,7 +15,7 @@ const Posts = ({data, search, searchValue}) => {
     }, [])
 
 
-    const postData = data.map(post => <Post post={post} key={post.id} userData={userData}/>);
+    const postData = data.map(post => <Post post={post} key={post.id} userData={userData} handleDelete={handleDelete}/>);
 
     const filterData = searchValue === "" ? postData : postData.filter(forum => forum.props.post.title.toLowerCase().includes(searchValue.toLowerCase()));
 

@@ -39,6 +39,18 @@ function App() {
     })
   }
 
+  //post delete
+  const handleDelete = id => {
+    fetch(`http://localhost:9292/forum_posts/${id}`,{
+      method : 'DELETE'
+    })
+    .then(() => {
+      const deletePost = postData.filter(post => post.id !== id)
+      setPostData(deletePost)
+    })
+  }
+  
+
   return (
     <Router>
       <div>
@@ -52,7 +64,8 @@ function App() {
                 <Users />
               </Route>  
               <Route path="/">
-                <Posts data={postData} search={search} searchValue={searchValue}/>
+                <Posts data={postData} search={search} searchValue={searchValue}
+                handleDelete={handleDelete}/>
               </Route>
 
             </Switch>
