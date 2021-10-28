@@ -14,8 +14,7 @@ function Users() {
             })
     }, [])
 
-    const checkUsers = userData.map(user => <User key={user.id} username={user.username}/>)
-    console.log(checkUsers);
+    const checkUsers = userData.map(user => <User key={user.id} username={user.username} id={user.id}/>)
 
     return (
         <>
