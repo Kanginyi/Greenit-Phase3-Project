@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchBar from './SearchBar'
-import User from './User'
+import LogSign from './LogSign'
 import { useHistory, Link } from 'react-router-dom'
 
 import logo from "../../reddit-logo.png"
@@ -22,7 +22,7 @@ const NavBar = () => {
                     <h4>Greenit</h4>
                 </span>     
                 <SearchBar />  
-                <User /> 
+                <LogSign /> 
             </div>          
         </>
     )
