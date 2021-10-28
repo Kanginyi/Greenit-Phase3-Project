@@ -4,6 +4,8 @@
 
 body{
     background-color: #dae6dc;
+    font-family: 'Source Sans Pro', sans-serif;
+    
 }
 
 
@@ -177,6 +179,11 @@ main {
 
 .user-info{
     margin-bottom: 10px;
+}
+
+.forum-post-title {
+    font-family: 'Noto Serif Display', serif;
+    font-size: 2em;
 }
 
 

@@ -16,7 +16,7 @@ const Post = ({post, userData}) => {
                     <h5>Posted by u/{userObj[0].username} on {dateFormat}!</h5>
                 </div>
                 <div className='post-info'>
-                    <h3>{post.title}</h3>
+                    <h3 className="forum-post-title">{post.title}</h3>
                 </div>
                 {post.image_url ? <img src={post.image_url} alt={post.title}/> : null }
                 <div>        

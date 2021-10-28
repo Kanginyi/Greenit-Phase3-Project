@@ -9,11 +9,10 @@ function App() {
   const [postData, setPostData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:9292/forum_posts")
+    fetch(`http://localhost:9292/forum_posts`)
       .then(resp => resp.json())
       .then(data => setPostData(data))
   }, [])
-
 
 
   return (
@@ -23,7 +22,7 @@ function App() {
       </header>
       <main> 
         <CategoryBar />
-        <Posts data={postData}/>
+          <Posts data={postData}/>
       </main>
       <footer> 
         <Footer />

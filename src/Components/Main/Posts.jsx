@@ -19,7 +19,7 @@ const Posts = ({data}) => {
     
     return (
         <div>
-            {postData}
+            {postData}  
         </div>
     )
 }
