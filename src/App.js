@@ -16,12 +16,17 @@ function App() {
       .then(data => setPostData(data))
   }, [])
 
+  const [searchValue, setSearchValue] = useState("");
+
+  function search(e) {
+    setSearchValue(e.target.value);
+  }
 
   return (
     <Router>
       <div>
         <header className='sticky'>
-          <NavBar /> 
+          <NavBar search={search}/> 
         </header>
         <main> 
           <CategoryBar />
@@ -30,7 +35,7 @@ function App() {
                 <Users />
               </Route>  
               <Route path="/">
-                <Posts data={postData}/>
+                <Posts data={postData} search={search} searchValue={searchValue}/>
               </Route>
 
             </Switch>

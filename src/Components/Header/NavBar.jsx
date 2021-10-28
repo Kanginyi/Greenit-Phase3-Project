@@ -1,11 +1,11 @@
 import React from 'react'
 import SearchBar from './SearchBar'
-import User from './User'
-import { useHistory, Link } from 'react-router-dom'
+import LogSign from './LogSign'
+import { useHistory } from 'react-router-dom'
 
 import logo from "../../reddit-logo.png"
 
-const NavBar = () => {
+const NavBar = ({search}) => {
     const history = useHistory();
 
     const goHome = () => {
@@ -21,8 +21,8 @@ const NavBar = () => {
                     <img id="greenit-logo" src={logo} alt="Greenit Logo"/> 
                     <h4>Greenit</h4>
                 </span>     
-                <SearchBar />  
-                <User /> 
+                <SearchBar search={search}/>  
+                <LogSign /> 
             </div>          
         </>
     )

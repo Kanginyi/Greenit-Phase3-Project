@@ -1,10 +1,11 @@
 import React from 'react'
 
 
-const SearchBar = () => {
+const SearchBar = ({search}) => {
     return (
         <form className="searchbar">     
         <input
+            onChange={search}
             type="text"
             placeholder="Search Greenit"
         />

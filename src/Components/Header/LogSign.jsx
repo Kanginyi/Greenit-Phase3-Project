@@ -1,6 +1,6 @@
 import React from 'react'
 
-const User = () => {
+const LogSign = () => {
     return (
         <div className='user-section'>
             <div className='log-btn'>
@@ -14,4 +14,4 @@ const User = () => {
     )
 }
 
-export default User
+export default LogSign
