@@ -18,7 +18,7 @@ const Posts = ({data, search, searchValue}) => {
     const postData = data.map(post => <Post post={post} key={post.id} userData={userData}/>);
 
     const filterData = searchValue === "" ? postData : postData.filter(forum => forum.props.post.title.toLowerCase().includes(searchValue.toLowerCase()));
-    
+     
 
     return (
         <div>
