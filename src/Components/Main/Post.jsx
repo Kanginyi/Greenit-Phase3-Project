@@ -13,13 +13,13 @@ const Post = ({post, userData}) => {
         <div className='post-div'>
             <article className='single-post'>
                 <div className='user-info'>
-                    <h5>Posted by <span className="username-color">u/{userObj[0]?.username}</span> on {dateFormat}<span className="delete-X">X</span></h5>
+                    <h5>Posted by <span className="username-color">u/{userObj[0]?.username}</span> on {dateFormat}</h5><span className="delete-X">X</span>
                 </div>
                 <div className='post-info'>
                     <h3 className="forum-post-title">{post.title}</h3>
                 </div>
                 {post.image_url ? <img src={post.image_url} alt={post.title}/> : null }
-                <div>        
+                <div>
                     <p>
                         {post.content_post}
                     </p>
