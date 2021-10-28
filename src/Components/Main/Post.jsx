@@ -25,6 +25,11 @@ const Post = ({post, userData}) => {
                     </p>
                 </div>
             </article>
+            <div>
+                <button id="upvotes-button">👍 {post.upvotes} Upvotes</button>
+                <button id="downvotes-button">👎 {post.downvotes} Downvotes</button>
+            </div>
+            <br />
             <div className='post-btn-section'>
                 <button className='comment-btn'>View Comments</button>
             </div>

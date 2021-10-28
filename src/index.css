@@ -200,6 +200,14 @@ main {
     box-shadow: 1px 1px 5px 3px rgba(14, 129, 64, 0.4);
 }
 
+#upvotes-button:hover {
+    background-color:rgb(7, 172, 78)
+}
+
+#downvotes-button:hover {
+    background-color:rgb(252, 57, 57)
+}
+
 
 /* -----------------------Category STUFF */
 
