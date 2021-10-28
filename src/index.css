@@ -226,6 +226,7 @@ main {
     background-color: red;
     width: 18px;
     height: 18px;
+    padding: 1px;
     text-align: center;
     
 }
