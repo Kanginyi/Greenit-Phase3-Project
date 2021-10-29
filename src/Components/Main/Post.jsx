@@ -45,10 +45,15 @@ const Post = ({post, userData, handleDelete}) => {
 
     const handleDownvotes = () => {
         setDownvotes(prevValue => prevValue + 1);
+
+        // fetch(`http:localhost:9292/forum_posts/${post.id}`, {
+        //     method: "PATCH",
+        //     headers: {"Content-Type": "application/json"},
+        //     body: JSON.stringify({downvotes: downvotes})
+        // })
+        //     .then(resp => resp.json())
+        //     .then(data => console.log(data))
     }
-
-
-
 
 
     return (
