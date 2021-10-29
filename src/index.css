@@ -311,7 +311,6 @@ main {
     font-size: 1em;
     font-weight: 700;
     background-color: rgb(0 173 76);
-    border:none;
     cursor: pointer;
     margin: 1em;
 }
