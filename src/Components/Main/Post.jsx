@@ -1,13 +1,40 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Post = ({post, userData, handleDelete}) => {
     const userObj = userData.filter(user => user.id === post.user_id);
 
+    // Changing date format
     const date = post.created_at.slice(0, 10);
     let slash = date.replaceAll("-", "/");
     let dateFormat = slash.slice(5) + "/" + slash.slice(0, 4);
 
 
+    // Getting the initial upvotes data
+    const [upvotes, setUpvotes] = useState(0);
+
+    useEffect(() => {
+        fetch(`http://localhost:9292/forum_posts/${post.id}`)
+            .then(resp => resp.json())
+            .then(data => setUpvotes(data.upvotes))
+    }, [])
+
+    const handleUpvotes = () => {
+        setUpvotes(prevValue => prevValue + 1);
+    }
+
+    // Handle downvotes
+    const [downvotes, setDownvotes] = useState(0);
+
+    useEffect(() => {
+        fetch(`http://localhost:9292/forum_posts/${post.id}`)
+            .then(resp => resp.json())
+            .then(data => setDownvotes(data.downvotes))
+    }, [])
+
+    
+    const handleDownvotes = () => {
+        setDownvotes(prevValue => prevValue + 1);
+    }
 
     return (
         <div className='post-div'>
@@ -26,7 +53,15 @@ const Post = ({post, userData, handleDelete}) => {
                 </div>
             </article>
             <div>
-                <button className="upvotes-button">👍 {post.upvotes} Upvotes</button> <button className="downvotes-button">👎 {post.downvotes} Downvotes</button>
+                <button
+                    onClick={handleUpvotes}
+                    className="upvotes-button">
+                        👍 {upvotes} Upvotes
+                </button> <button 
+                    onClick={handleDownvotes}
+                    className="downvotes-button">
+                        👎 {downvotes} Downvotes
+                </button>
             </div>
             <br />
             <div className='post-btn-section'>
