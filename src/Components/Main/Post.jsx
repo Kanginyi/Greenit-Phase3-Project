@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import { Link } from 'react-router-dom';
+
 const Post = ({post, userData, handleDelete}) => {
     const userObj = userData.filter(user => user.id === post.user_id);
 
@@ -85,7 +87,9 @@ const Post = ({post, userData, handleDelete}) => {
             </div>
             <br />
             <div className='post-btn-section'>
+                <Link to={`/users/${post.id}`}>
                 <button className='comment-btn'>View Comments</button>
+                </Link>
             </div>
         </div>
        
