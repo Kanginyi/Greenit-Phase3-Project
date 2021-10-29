@@ -360,9 +360,11 @@ main {
 .upvote-fnt{
     color: green;
     margin-right: 10px;
+    margin-bottom: -2px;
 }
 
 .dovote-fnt{
     color: green;
     margin-right: 10px;
+    margin-bottom: -2px;
 }
