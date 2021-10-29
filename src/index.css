@@ -225,7 +225,6 @@ main {
 }
 
 .delete-X {
-    border: 1px solid black;
     color: white;
     background-color: red;
     width: 18px;
