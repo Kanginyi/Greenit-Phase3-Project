@@ -15,7 +15,13 @@ const Post = ({post, userData, handleDelete}) => {
     useEffect(() => {
         fetch(`http://localhost:9292/forum_posts/${post.id}`)
             .then(resp => resp.json())
-            .then(data => setUpvotes(data.upvotes))
+            .then(data => {
+                if (data.upvotes) {
+                    setUpvotes(data.upvotes)
+                } else {
+                    setUpvotes(0)
+                }
+            })
     }, [])
 
     const handleUpvotes = () => {
@@ -28,13 +34,22 @@ const Post = ({post, userData, handleDelete}) => {
     useEffect(() => {
         fetch(`http://localhost:9292/forum_posts/${post.id}`)
             .then(resp => resp.json())
-            .then(data => setDownvotes(data.downvotes))
+            .then(data => {
+                if (data.downvotes) {
+                    setDownvotes(data.downvotes)
+                } else {
+                    setDownvotes(0)
+                }
+            })
     }, [])
 
-    
     const handleDownvotes = () => {
         setDownvotes(prevValue => prevValue + 1);
     }
+
+
+
+
 
     return (
         <div className='post-div'>
@@ -57,7 +72,7 @@ const Post = ({post, userData, handleDelete}) => {
                     onClick={handleUpvotes}
                     className="upvotes-button">
                         👍 {upvotes} Upvotes
-                </button> <button 
+                </button> <button
                     onClick={handleDownvotes}
                     className="downvotes-button">
                         👎 {downvotes} Downvotes
