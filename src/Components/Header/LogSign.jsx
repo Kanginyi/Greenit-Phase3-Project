@@ -4,10 +4,10 @@ const LogSign = () => {
     return (
         <div className='user-section'>
             <div className='log-btn'>
-                <button type="submit">Login</button>
+                <button onClick={() => alert("Quang, I'm two steps ahead of you. Please stfu :^)")} type="submit">Login</button>
             </div>
             <div className='sign-btn'>
-                <button type="submit">Sign Up</button>
+                <button onClick={() => alert("No.")}type="submit">Sign Up</button>
             </div>
             
         </div>
