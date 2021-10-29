@@ -15,17 +15,17 @@ const Post = ({post, userData, handleDelete}) => {
     useEffect(() => {
         fetch(`http://localhost:9292/forum_posts/${post.id}`)
             .then(resp => resp.json())
-            .then(data => {
-                if (data.upvotes) {
-                    setUpvotes(data.upvotes)
-                } else {
-                    setUpvotes(0)
-                }
-            })
+            .then(data => setUpvotes(data.upvotes))
     }, [])
 
     const handleUpvotes = () => {
-        setUpvotes(prevValue => prevValue + 1);
+        fetch(`http://localhost:9292/forum_posts/${post.id}/edit/upvotes`, {
+            method: "PATCH",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({upvotes: upvotes + 1})
+        })
+            .then(resp => resp.json())
+            .then(data => setUpvotes(data.upvotes))
     }
 
     // Handle downvotes
@@ -34,33 +34,34 @@ const Post = ({post, userData, handleDelete}) => {
     useEffect(() => {
         fetch(`http://localhost:9292/forum_posts/${post.id}`)
             .then(resp => resp.json())
-            .then(data => {
-                if (data.downvotes) {
-                    setDownvotes(data.downvotes)
-                } else {
-                    setDownvotes(0)
-                }
-            })
+            .then(data => setDownvotes(data.downvotes))
     }, [])
 
     const handleDownvotes = () => {
-        setDownvotes(prevValue => prevValue + 1);
-
-        // fetch(`http:localhost:9292/forum_posts/${post.id}`, {
-        //     method: "PATCH",
-        //     headers: {"Content-Type": "application/json"},
-        //     body: JSON.stringify({downvotes: downvotes})
-        // })
-        //     .then(resp => resp.json())
-        //     .then(data => console.log(data))
+        fetch(`http://localhost:9292/forum_posts/${post.id}/edit/downvotes`, {
+            method: "PATCH",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({downvotes: downvotes + 1})
+        })
+            .then(resp => resp.json())
+            .then(data => setDownvotes(data.downvotes))
     }
+
+    // Getting the newly created usernames
+    const [newUsernames, setNewUsernames] = useState("");
+
+    useEffect(() => {
+        fetch(`http://localhost:9292/users/${post.user_id}`)
+            .then(resp => resp.json())
+            .then(data => setNewUsernames(data?.username))
+    }, [])
 
 
     return (
         <div className='post-div'>
             <article className='single-post'>
                 <div className='user-info'>
-                    <h5>Posted by <span className="username-color">u/{userObj[0]?.username}</span> on {dateFormat}</h5><button className="delete-X" onClick={() => handleDelete(post.id)}>X</button>
+                    <h5>Posted by <span className="username-color">u/{newUsernames}</span> on {dateFormat}</h5><button className="delete-X" onClick={() => handleDelete(post.id)}>X</button>
                 </div>
                 <div className='post-info'>
                     <h3 className="forum-post-title">{post.title}</h3>

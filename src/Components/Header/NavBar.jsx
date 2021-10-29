@@ -17,10 +17,14 @@ const NavBar = ({search}) => {
     return (
         <>
             <div className='nav'>
-                <span title="Greenit >:^(" className='logo-box' onClick={goHome}>
-                    <img id="greenit-logo" src={logo} alt="Greenit Logo"/> 
-                    <h4>Greenit</h4>
-                </span>     
+                <a href="/" id="no-underline-pls">
+                    <span
+                        title="Greenit >:^("
+                        className='logo-box'>
+                        <img id="greenit-logo" src={logo} alt="Greenit Logo"/> 
+                        <h4>Greenit</h4>
+                    </span>
+                </a>  
                 <SearchBar search={search}/>  
                 <LogSign /> 
             </div>          

@@ -125,6 +125,10 @@ cursor: pointer;
     height: 40px
 }
 
+#no-underline-pls {
+    text-decoration: none;
+}
+
 
 /* ------------------MAIN CONTENT STUFF  */
 
@@ -228,7 +232,6 @@ main {
     height: 18px;
     padding: 1px;
     text-align: center;
-    
 }
 
 /* -----------------------Category STUFF */

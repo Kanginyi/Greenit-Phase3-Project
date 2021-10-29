@@ -8,6 +8,8 @@ const Form = ({setShowForum, handleAddPost}) => {
         title: "",
         content_post: "",
         image_url: "",
+        upvotes: 0,
+        downvotes: 0
     })
 
     const handleInputChange = (e) => {
