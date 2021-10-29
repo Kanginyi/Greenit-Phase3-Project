@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import {BiUpvote, BiDownvote} from 'react-icons/bi'
 
 import { Link } from 'react-router-dom';
 
@@ -79,11 +80,13 @@ const Post = ({post, userData, handleDelete}) => {
                 <button
                     onClick={handleUpvotes}
                     className="upvotes-button">
-                        👍 {upvotes} Upvotes
+                        <BiUpvote className='upvote-fnt' />
+                         {upvotes} Upvotes
                 </button> <button
                     onClick={handleDownvotes}
                     className="downvotes-button">
-                        👎 {downvotes} Downvotes
+                        <BiDownvote className='dovote-fnt'/>
+                         {downvotes} Downvotes
                 </button>
             </div>
             <br />

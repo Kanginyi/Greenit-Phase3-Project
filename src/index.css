@@ -356,3 +356,13 @@ main {
     background-color: rgb(34, 31, 31);
 }
 
+/* ----------icons */
+.upvote-fnt{
+    color: green;
+    margin-right: 10px;
+}
+
+.dovote-fnt{
+    color: green;
+    margin-right: 10px;
+}
