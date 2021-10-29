@@ -50,7 +50,7 @@ const PostDetails = ({userData}) => {
                 </div>   
                 
                 <div >
-                    <h4 className='comment-username-class'>{storeUser[0]?.username}</h4>
+                    <h4 className='comment-username-class'>-{storeUser[0]?.username}</h4>
                 </div>                    
             </div>
         )
